@@ -16,4 +16,5 @@ public class CompanyVO {
     private Integer vagas;
     private String site;
     private AddressVO address;
+    private UserVO userVO;
 }

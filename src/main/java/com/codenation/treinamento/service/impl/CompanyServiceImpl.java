@@ -2,8 +2,10 @@ package com.codenation.treinamento.service.impl;
 
 import com.codenation.treinamento.domain.dao.AddressDAO;
 import com.codenation.treinamento.domain.dao.CompanyDAO;
+import com.codenation.treinamento.domain.dao.UserDAO;
 import com.codenation.treinamento.entity.Address;
 import com.codenation.treinamento.entity.Company;
+import com.codenation.treinamento.entity.User;
 import com.codenation.treinamento.service.CompanyService;
 import com.codenation.treinamento.vo.AddressVO;
 import com.codenation.treinamento.vo.CompanyVO;
@@ -19,6 +21,8 @@ public class CompanyServiceImpl implements CompanyService {
     CompanyDAO companyDAO;
     @Autowired
     AddressDAO addressDAO;
+    @Autowired
+    UserDAO userDAO;
 
     @Override
     @Transactional
@@ -70,6 +74,11 @@ public class CompanyServiceImpl implements CompanyService {
     public List findAllByNameOrderByName(String name) {
 
         return companyDAO.findAllByNameOrderByName(name);
+    }
+
+    @Override
+    public List listUserName() {
+        return userDAO.buscarUsuario();
     }
 
     public Integer getCompanyCount(){

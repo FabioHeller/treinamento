@@ -1,6 +1,7 @@
 package com.codenation.treinamento.endpoints;
 
 import com.codenation.treinamento.entity.Company;
+import com.codenation.treinamento.entity.User;
 import com.codenation.treinamento.service.impl.CompanyServiceImpl;
 import com.codenation.treinamento.vo.CompanyVO;
 import io.swagger.annotations.Api;
@@ -33,10 +34,18 @@ public class CompanyController {
         service.deleteCompany(id);
     }
 
-    @GetMapping(params = "name")
+    @GetMapping("/nameCompany")
     @ApiOperation(value = "List<Company>")
     @ResponseStatus(HttpStatus.OK)
     public List<Company> listCompanyName(@RequestParam String name){
         return service.listCompanyName(name);
     }
+
+    @GetMapping("/listUsers")
+    @ApiOperation(value = "List<User>")
+    @ResponseStatus(HttpStatus.OK)
+    public List<User> listUserName(){
+        return service.listUserName();
+    }
+
 }
