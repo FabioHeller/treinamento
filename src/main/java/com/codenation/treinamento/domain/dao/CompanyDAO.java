@@ -1,7 +1,6 @@
 package com.codenation.treinamento.domain.dao;
 
 import com.codenation.treinamento.entity.Company;
-import com.codenation.treinamento.vo.CompanyVO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
